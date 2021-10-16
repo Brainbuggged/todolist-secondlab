@@ -3,20 +3,6 @@ import Task from "../Task/Task.js";
 import AddTask from "../AddTask/AddTask.js";
 import './TaskList.css';
 
-
-function Example() {
-  // Объявление переменной состояния, которую мы назовём "count"
-  const [count, setCount] = useState(0);
-
-  return (
-    <div>
-      <p>Вы кликнули {count} раз</p>
-      <button onClick={() => setCount(count + 1)}>
-        Нажми на меня
-      </button>
-    </div>
-  );
-}
 class TaskList extends React.Component{
     state = {
       tasks: [{id:'1',name:'Сделать ДЗ',description:'Написать калькулятор',completed:true},
@@ -27,12 +13,14 @@ class TaskList extends React.Component{
           ]
           
     }
+    
     callbackFunction = (childName,childDescription) => {
       this.setState({
         tasks: [... this.state.tasks, {id:this.checkId(),name:childName,description:childDescription}]
       });
       console.log(childName + " " + childDescription);
     }
+
     checkId()
     {
       return this.state.tasks[this.state.tasks.length-1];
