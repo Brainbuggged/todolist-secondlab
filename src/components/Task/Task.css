@@ -1,0 +1,14 @@
+.unCompletedTask{
+    background-color: red;
+    border-radius: 25px;
+  }
+  
+.completedTask{
+    background-color: green;
+    border-radius: 25px;
+  }
+
+  .Task{
+    text-align:center;
+    border-radius: 25px;
+  }
